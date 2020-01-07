@@ -3,14 +3,14 @@
 
 <div class="mb-5 mt-5 container">
 
-	<h1>Welcome</h1> 
+	<h1>Welcome</h1>
 
 	@if(session('successMsg'))
 	<div class="alert alert-success">
 		{{session('successMsg')}}
 	</div>
 	@endif
-	
+
 	<table class="table">
 		<thead class="grey lighten-2">
 			<tr>
@@ -31,7 +31,7 @@
 				<td>{{$student->EMAIL}}</td>
 				<td>{{$student->PHONE}}</td>
 				<td>
-					<a class="btn btn-raised btn-sm btn-warning" href="{{route('edit', $student->id)}}">Edit</a> || 
+					<a class="btn btn-raised btn-sm btn-warning" href="{{route('edit', $student->id)}}">Edit</a> ||
 					<form style="display: none;" method="POST" id="delete-form-{{$student->id}}" action="{{ route('delete', $student->id)}}">
 						{{csrf_field()}}
 						{{method_field('delete')}}
